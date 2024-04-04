@@ -1,29 +1,17 @@
 // 04.04.2024 - TASK - ASGAR ISMAYILOV
-let count = 0;
+let i = 1;
+let direction = true;
 btn.addEventListener("click", () => {
-  let demo = setInterval(() => {
-    btn.textContent = `Click Me ${++count}`;
-    btn.style.backgroundColor = getRandColor();
+  if (i === 1) {
+    direction = true;
+  }
+  if (i === 10) {
+    direction = false;
+  }
 
-    if (count === 10) {
-      clearInterval(demo);
-
-      let demo2 = setInterval(() => {
-        btn.textContent = `Click Me ${--count}`;
-        btn.style.backgroundColor = getRandColor();
-        if (count === 0) {
-          clearInterval(demo2);
-          btn.textContent = `Click Me`;
-        }
-      }, 1000);
-    }
-  }, 1000);
+  if (direction) {
+    btn.textContent = `Click me ${i++}`;
+  } else {
+    btn.textContent = `Click me ${i--}`;
+  }
 });
-
-function getRandColor() {
-  let r = Math.floor(Math.random() * 256);
-  let g = Math.floor(Math.random() * 256);
-  let b = Math.floor(Math.random() * 256);
-  console.log(r, g, b);
-  return `rgb(${r},${g},${b})`;
-}
