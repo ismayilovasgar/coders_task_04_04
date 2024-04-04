@@ -7,7 +7,7 @@ btn.addEventListener("click", () => {
 
     if (count === 10) {
       clearInterval(demo);
-      
+
       let demo2 = setInterval(() => {
         btn.textContent = `Click Me ${--count}`;
         btn.style.backgroundColor = getRandColor();
@@ -16,6 +16,7 @@ btn.addEventListener("click", () => {
         }
       }, 1000);
     }
+    
   }, 1000);
 });
 
