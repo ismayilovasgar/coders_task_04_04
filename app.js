@@ -11,7 +11,17 @@ btn.addEventListener("click", () => {
 
   if (direction) {
     btn.textContent = `Click me ${i++}`;
+    btn.style.backgroundColor = getRandColor();
   } else {
+    btn.style.backgroundColor = getRandColor();
     btn.textContent = `Click me ${i--}`;
   }
 });
+
+function getRandColor() {
+  let r = Math.floor(Math.random() * 256);
+  let g = Math.floor(Math.random() * 256);
+  let b = Math.floor(Math.random() * 256);
+  console.log(r, g, b);
+  return `rgb(${r},${g},${b})`;
+}
